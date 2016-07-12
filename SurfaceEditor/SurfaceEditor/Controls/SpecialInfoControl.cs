@@ -19,7 +19,11 @@ namespace SurfaceEditor
 
         public string SelectedLabel
         {
-            get { return (string)listBox2.Items[listBox2.SelectedIndex]; }
+            get 
+            {
+                if (listBox2.SelectedIndex < 0) return "";
+                return (string)listBox2.Items[listBox2.SelectedIndex];
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
